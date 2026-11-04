@@ -251,7 +251,7 @@ const ws=$$('#rt span');
 // faq
 $$('.gal img').forEach(i=>i.onclick=()=>{$('#lb img').src=i.src;$('#lb').classList.add('on')});$('#lb').onclick=()=>$('#lb').classList.remove('on');
 
-const KEY='INSERISCI_LA_CHIAVE_WEB3FORMS';
+const KEY='42289cca-c344-49cd-a709-5d0f72910f15';
 $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,m=$('#fmsg'),b=f.querySelector('button');m.className='';
  if(f.botcheck.checked)return;
  if(!f.nome.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value)||f.telefono.value.replace(/\D/g,'').length<6){m.className='err';m.textContent='Controlla nome, email e telefono.';return}
