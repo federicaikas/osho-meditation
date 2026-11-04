@@ -20,7 +20,7 @@ section{padding:4.5rem 1.4rem;position:relative}
 .rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
 #bar{position:fixed;top:0;left:0;height:4px;background:var(--o);width:0;z-index:50}
 /* hero */
-#hero{min-height:100svh;padding:0;background:linear-gradient(#f6c98f 0%,#f3dcb8 45%,var(--c) 100%);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#hero{min-height:calc(100vh - 4rem);min-height:calc(100svh - 4rem);padding:0;background:linear-gradient(#f6c98f 0%,#f3dcb8 45%,var(--c) 100%);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 #hero svg.m{position:absolute;left:0;width:100%;bottom:0}
 .sun{position:absolute;left:50%;top:30%;width:42vmin;height:42vmin;border-radius:50%;background:radial-gradient(#fff4d6,#f7b255 70%);transform:translateX(-50%);filter:blur(1px);opacity:.9}
 #hero .in{position:relative;z-index:2;padding:6rem 1.4rem 14rem;text-align:center}
@@ -32,7 +32,7 @@ section{padding:4.5rem 1.4rem;position:relative}
 .scroll{position:absolute;bottom:1.2rem;left:50%;z-index:3;color:#fff;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transform:translateX(-50%);animation:bob 2s infinite}
 @keyframes bob{50%{transform:translate(-50%,8px)}}
 /* marquee */
-.mq{background:var(--g);color:var(--c);overflow:hidden;white-space:nowrap;padding:1rem 0;font-family:Cinzel,serif;font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase}
+.mq{height:4rem;display:flex;align-items:center;background:var(--g);color:var(--c);overflow:hidden;white-space:nowrap;padding:0;font-family:Cinzel,serif;font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase}
 .mq div{display:inline-block;animation:mq 22s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* reveal text */
