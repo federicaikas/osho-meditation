@@ -55,6 +55,13 @@ section{padding:4.5rem 1.4rem;position:relative}
 #days .hd{position:absolute;top:1.6rem;left:1.4rem;right:1.4rem}
 #days .hd h2{font-size:1.2rem;font-family:'DM Sans';margin:0;opacity:.7}
 /* faq */
+.pc{background:var(--t);color:#fff;border-radius:28px;padding:2rem 1.6rem;text-align:center;margin-bottom:1.6rem;position:relative;overflow:hidden}
+.pc::before{content:"";position:absolute;width:60vmin;height:60vmin;border-radius:50%;background:#ffffff14;right:-20vmin;top:-25vmin}
+.pc small{text-transform:uppercase;letter-spacing:.15em;font-weight:700;opacity:.85}
+.pr{font-family:Fraunces,serif;font-size:clamp(5rem,26vw,8rem);line-height:1;margin:.2rem 0 1rem;display:flex;justify-content:center;align-items:flex-start}.pr i{font-size:.4em;font-style:normal;margin:.2em 0 0 .1em}
+.inc{list-style:none;padding:0}.inc li{display:flex;gap:.9rem;align-items:center;padding:.95rem 0;border-bottom:1px solid #1f4a3f22;font-weight:500;opacity:0;transform:translateX(-24px);transition:.6s calc(var(--d)*.12s)}
+.inc li::before{content:"✓";flex:0 0 1.9rem;height:1.9rem;border-radius:50%;background:var(--s);color:#fff;display:grid;place-items:center;font-size:.95rem}
+.inc.in li{opacity:1;transform:none}.inc em{opacity:.6;font-size:.85em}
 .q{border-bottom:1px solid #1f4a3f33}
 .q button{all:unset;cursor:pointer;display:flex;justify-content:space-between;width:100%;padding:1.1rem 0;font-weight:700;font-size:1.1rem}
 .q button::after{content:"+";font-size:1.6rem;line-height:1;transition:.3s;color:var(--t)}
@@ -122,6 +129,19 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
  </div>
 </section>
 
+<section id="price"><div class="wrap">
+ <span class="tag rv">Quota di partecipazione</span><h2 class="rv">Il prezzo include</h2>
+ <div class="pc rv"><small>4 giorni · 5–8 dicembre</small><div class="pr"><span data-n="350" data-p="1">0</span><i>€</i></div><a class="btn" href="#contact" style="background:#fff;color:var(--t)">Richiedi informazioni</a></div>
+ <ul class="inc">
+  <li style="--d:0">Tutte le meditazioni di Osho</li>
+  <li style="--d:1">Sessioni di yoga</li>
+  <li style="--d:2">Momenti di condivisione e silenzio</li>
+  <li style="--d:3">Guida di Swami Kalyanmitra</li>
+  <li style="--d:4">Pasti <em>(da confermare)</em></li>
+  <li style="--d:5">Pernottamento <em>(da confermare)</em></li>
+ </ul>
+</div></section>
+
 <section><div class="wrap">
  <span class="tag rv">Per chi è</span><h2 class="rv">Non serve esperienza</h2>
  <div class="rv" id="faq">
@@ -172,9 +192,9 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 // reveal
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
-$$('.rv').forEach(e=>io.observe(e));
+$$('.rv,.inc').forEach(e=>io.observe(e));
 // counters
-const co=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const el=x.target,n=+el.dataset.n;let i=0;const t=setInterval(()=>{el.textContent=++i;if(i>=n)clearInterval(t)},1400/n);co.unobserve(el)}}),{threshold:.6});
+const co=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const el=x.target,n=+el.dataset.n;let i=0;const st=el.dataset.p?7:1;const t=setInterval(()=>{i=Math.min(n,i+st);el.textContent=i;if(i>=n)clearInterval(t)},1400/(n/st));co.unobserve(el)}}),{threshold:.6});
 $$('[data-n]').forEach(e=>co.observe(e));
 // reveal words
 const rt=$('#rt');rt.innerHTML=rt.textContent.split(' ').map(w=>'<span>'+w+'</span>').join(' ');
