@@ -2,7 +2,7 @@
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Osho Meditations – bozza landing page</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
 :root{--g:#1f4a3f;--gd:#143329;--t:#b9604a;--c:#fbf4e6;--c2:#f3e6cf;--o:#d9a24b;--s:#7a8f62}
 *{box-sizing:border-box;margin:0}
@@ -24,12 +24,12 @@ section{padding:4.5rem 1.4rem;position:relative}
 .sun{position:absolute;left:50%;top:30%;width:42vmin;height:42vmin;border-radius:50%;background:radial-gradient(#fff4d6,#f7b255 70%);transform:translateX(-50%);filter:blur(1px);opacity:.9}
 #hero .in{position:relative;z-index:2;padding:6rem 1.4rem 14rem;text-align:center}
 #hero h1{font-size:clamp(3.2rem,16vw,7rem);color:var(--gd)}
-#hero h1 span{display:block;font-size:.38em;font-weight:500;font-style:italic;color:var(--t);margin-top:.3em}
-.chip{display:inline-flex;gap:.5rem;align-items:center;background:#fff9;backdrop-filter:blur(6px);padding:.55rem 1rem;border-radius:99px;font-weight:700;margin:1.4rem .2rem 1.6rem;font-size:.9rem}
+#hero h1 span{display:block;font-family:Cinzel,serif;font-size:.2em;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--t);margin-top:1em;line-height:1.5}
+.chip{display:inline-flex;gap:.5rem;align-items:center;background:#fff9;backdrop-filter:blur(6px);padding:.8rem 1.4rem;border-radius:99px;font-weight:700;margin:1.6rem .2rem 1.8rem;font-size:1.35rem;line-height:1.3;justify-content:center;flex-wrap:wrap}
 .scroll{position:absolute;bottom:1.2rem;left:50%;z-index:3;color:#fff;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transform:translateX(-50%);animation:bob 2s infinite}
 @keyframes bob{50%{transform:translate(-50%,8px)}}
 /* marquee */
-.mq{background:var(--g);color:var(--c);overflow:hidden;white-space:nowrap;padding:1rem 0;font-family:Fraunces,serif;font-size:1.5rem;font-style:italic}
+.mq{background:var(--g);color:var(--c);overflow:hidden;white-space:nowrap;padding:1rem 0;font-family:Cinzel,serif;font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase}
 .mq div{display:inline-block;animation:mq 22s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* reveal text */
@@ -104,7 +104,7 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
  <div class="in">
   <span class="tag" style="color:var(--gd)">Un tempo per ritrovarti</span>
   <h1>Osho<br>Meditations<span>per tornare a casa dentro di sé</span></h1>
-  <div class="chip">📅 5–8 dicembre 2026 &nbsp;·&nbsp; 📍 Castione della Presolana</div><br>
+  <div class="chip"><span style="font-family:Fraunces,serif;font-size:1.9rem;line-height:1">5–8 dicembre 2026</span><span>📍 Castione della Presolana</span></div><br>
   <a class="btn" href="#contact">Scrivici</a>
  </div>
  <div class="scroll">scorri ↓</div>
