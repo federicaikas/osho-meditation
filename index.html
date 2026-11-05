@@ -76,7 +76,7 @@ section{padding:4.5rem 1.4rem;position:relative}
 #tm{padding-bottom:1rem}#tm .hs{padding-bottom:1.2rem}.t{flex:0 0 84%;max-width:360px;scroll-snap-align:center;background:#fff;border-radius:26px;padding:1.4rem 1.5rem 1.6rem;box-shadow:0 14px 40px #1f4a3f1c;text-align:center}
 .t i{font:700 5rem/1 Fraunces,serif;color:var(--t);display:block;height:2.6rem;font-style:normal}.t .n{font-family:Fraunces,serif;font-size:1.4rem;display:block;margin:.4rem 0 .7rem}.t p{font-style:italic;font-size:.95rem}.t strong{font-weight:700}
 .ct{display:flex;flex-direction:column;gap:.7rem;margin-top:1.6rem}.ct{align-items:center}.ct a{color:var(--c);text-decoration:underline;text-underline-offset:3px;font-weight:500;font-size:1.05rem;white-space:nowrap}.tels{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap}.tels a{font-size:.98rem}
-.fm{display:grid;gap:.8rem;max-width:420px;margin:1.6rem auto 0;text-align:left}.fm input[type=text],.fm input[type=email],.fm input[type=tel]{font:inherit;padding:1rem 1.2rem;border-radius:16px;border:2px solid #fbf4e633;background:#ffffff14;color:var(--c);outline:0;transition:.25s}.fm input::placeholder{color:#fbf4e69a}.fm input:focus{border-color:var(--o);background:#ffffff22}
+.fm{display:grid;gap:.8rem;max-width:420px;margin:1.6rem auto 0;text-align:left}.fm input[type=text],.fm input[type=email],.fm input[type=tel]{font:inherit;padding:1rem 1.2rem;border-radius:16px;border:2px solid #fbf4e633;background:#ffffff14;color:var(--c);outline:0;transition:.25s}.fm textarea{font:inherit;padding:1rem 1.2rem;border-radius:16px;border:2px solid #fbf4e633;background:#ffffff14;color:var(--c);outline:0;transition:.25s;resize:vertical;min-height:5.5rem}.fm textarea::placeholder,.fm input::placeholder{color:#fbf4e69a}.fm textarea:focus{border-color:var(--o);background:#ffffff22}.fm input:focus{border-color:var(--o);background:#ffffff22}
 .pv{display:flex;gap:.7rem;align-items:flex-start;font-size:.85rem;opacity:.9}.pv input{margin-top:.2rem;accent-color:var(--o);width:1.1rem;height:1.1rem;flex:none}.pv a{color:var(--o)}
 .fm details{font-size:.8rem;opacity:.8}.fm summary{cursor:pointer}.fm button.btn{width:100%;cursor:pointer}.fm a.btn{display:block;text-align:center;color:var(--c)}.fm button[disabled]{opacity:.6}#fmsg{text-align:center;font-weight:500}#fmsg:empty{display:none}#fmsg.ok{color:#cfe8b0}#fmsg.err{color:#ffc2b3}
 .ni{font-size:1.3rem;margin:2rem 0 .4rem}.inc.no li::before{content:"–";background:#1f4a3f26;color:var(--g)}
@@ -226,6 +226,7 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
   <input type="text" name="nome" placeholder="Nome e cognome" autocomplete="name" required>
   <input type="email" name="email" placeholder="Email" autocomplete="email" required>
   <input type="tel" name="telefono" placeholder="Numero di telefono" autocomplete="tel" required>
+  <textarea name="messaggio" rows="3" maxlength="1000" placeholder="Note o domande (facoltativo)"></textarea>
   <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
   <label class="pv"><input type="checkbox" name="privacy" required> <span>Acconsento al trattamento dei miei dati per essere ricontattato/a sul ritiro.</span></label>
   <button class="btn" type="submit">Richiedi informazioni</button>
@@ -260,7 +261,7 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
  if(!f.privacy.checked){m.className='err';m.textContent='Per inviare serve il consenso al trattamento dei dati.';return}
  if(KEY.startsWith('INSERISCI')){m.className='err';m.textContent='Modulo in modalità prova: nessun invio.';return}
  b.disabled=true;b.textContent='Invio…';
- try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:KEY,subject:'Richiesta informazioni – Osho Meditations 5-8 dicembre',from_name:'Landing Osho Meditations',nome:f.nome.value.trim(),email:f.email.value.trim(),telefono:f.telefono.value.trim(),privacy:'consenso dato',botcheck:''})});
+ try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:KEY,subject:'Richiesta informazioni – Osho Meditations 5-8 dicembre',from_name:'Landing Osho Meditations',nome:f.nome.value.trim(),email:f.email.value.trim(),telefono:f.telefono.value.trim(),messaggio:f.messaggio.value.trim(),privacy:'consenso dato',botcheck:''})});
   const j=await r.json();if(j.success){f.reset();m.className='ok';m.textContent='Grazie! Ti ricontatteremo presto.'}else throw 0}
  catch(_){m.className='err';m.textContent='Invio non riuscito. Scrivici su WhatsApp o chiamaci.'}
  b.disabled=false;b.textContent='Richiedi informazioni'});
