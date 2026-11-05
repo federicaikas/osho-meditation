@@ -54,12 +54,15 @@ section{padding:4.5rem 1.4rem;position:relative}
 #days .sun2{position:absolute;z-index:1;width:30vmin;height:30vmin;border-radius:50%;background:radial-gradient(#fff4d6,#f7b255 70%);left:0;top:0;opacity:.7;will-change:transform}
 #days .dt{font-size:1.05rem;letter-spacing:.2em;text-transform:uppercase;color:var(--o);font-weight:700}
 #days .dt,#days h2{text-shadow:0 2px 14px #0f2a22,0 0 3px #0f2a22aa}
-#days h2{font-size:clamp(2.5rem,11vw,4.6rem);margin:.3rem 0}
-#dl{list-style:none;padding:.4rem 1.1rem;margin-top:.8rem;background:#0f2a2299;backdrop-filter:blur(8px);border-radius:20px;max-width:540px;width:100%;margin-left:auto;margin-right:auto}#dl li{display:flex;flex-direction:column;gap:.1rem;align-items:center;padding:.8rem 0;border-bottom:1px solid #fff2;font-size:1.28rem;line-height:1.3}#dl li:last-child{border:0}#dl b{color:var(--o);font-family:Fraunces,serif;font-size:1.4rem}
+#days h2{font-size:clamp(2.5rem,11.5vw,4.8rem);margin:.3rem 0;text-transform:uppercase;letter-spacing:.02em;line-height:1.02}
+#dl{list-style:none;padding:.5rem 1.5rem;margin:1.1rem auto 0;background:#0f2a22aa;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #ffffff26;border-radius:24px;max-width:520px;width:100%;text-align:left}
+#dl li{display:flex;gap:.9rem;align-items:center;padding:.95rem 0;border-bottom:1px solid #ffffff1f;font-size:1.2rem;line-height:1.3}
+#dl li::before{content:"✦";color:var(--o);font-size:1rem;flex:none}
+#dl li:last-child{border:0}
 .dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.4rem}.dots i{width:2.2rem;height:5px;border-radius:5px;background:#fff3;transition:.4s}.dots i.on{background:var(--o);width:4rem}
 .txt{transition:.5s}.txt.sw{opacity:0;transform:translateY(16px)}
 #days .hd{position:absolute;top:1.6rem;left:1.4rem;right:1.4rem}
-#days .hd h2{font-size:1.2rem;font-family:'DM Sans';margin:0;opacity:.7}
+#days .hd h2{font-size:1.2rem;font-family:'DM Sans';margin:0;opacity:.9}#days .hd p{font-size:.95rem;opacity:.8;margin-top:.2rem}
 /* faq */
 .pc{border:1.5px solid #1f4a3f33;border-radius:16px;padding:.8rem 1.2rem;text-align:center;margin:1.6rem 0 0;font-size:.95rem;opacity:.9}
 .pc .pr{font-family:Fraunces,serif;font-size:1.5rem;font-weight:700;color:var(--t);margin:0 .25rem}
@@ -131,18 +134,18 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
 <section style="padding-top:1rem"><div class="wrap">
  <span class="tag rv">Cosa vivrai</span><h2 class="rv">Cinque modi per tornare a casa</h2>
  <div class="hs rv" id="cards">
-  <div class="card" style="background:var(--t)"><b>1</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="13" r="5.5"/><path d="M32 20v17M32 25c-7 3-11 8-13 14M32 25c7 3 11 8 13 14"/><path d="M10 49c8-9 36-9 44 0-8 7-36 7-44 0Z"/></svg><h3>Meditazioni di Osho</h3><p>Pratiche attive e momenti di quiete per dare spazio a emozioni, rabbia e tensioni, e trasformarle.</p></div>
+  <div class="card" style="background:var(--t)"><b>1</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="13" r="5.5"/><path d="M32 20v17M32 25c-7 3-11 8-13 14M32 25c7 3 11 8 13 14"/><path d="M10 49c8-9 36-9 44 0-8 7-36 7-44 0Z"/></svg><h3>Meditazioni di Osho</h3><p>Meditazioni dinamiche e passive: sono il cuore del ritiro. Danno spazio a emozioni, rabbia e tensioni, e le trasformano.</p></div>
   <div class="card" style="background:var(--g)"><b>2</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 12c8 9 8 22 0 33-8-11-8-24 0-33Z"/><path d="M32 45c-10-2-17-9-20-19 10 1 17 9 20 19ZM32 45c10-2 17-9 20-19-10 1-17 9-20 19Z"/><path d="M16 53h32"/></svg><h3>Consapevolezza</h3><p>Impari a osservare ciò che accade dentro e fuori di te, senza giudizio, restando presente.</p></div>
   <div class="card" style="background:#5f7449"><b>3</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="10" r="5"/><path d="M32 16v22M32 21 21 9M32 21 43 9M32 38v18M32 38l12 8-12 3"/></svg><h3>Sessioni di yoga</h3><p>Asana e respiro consapevole per ascoltare il corpo, senza competizione, fino a un profondo rilassamento.</p></div>
-  <div class="card" style="background:#8a4a3a"><b>4</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M5 53 23 24l10 16 8-11 18 24Z"/><circle cx="48" cy="13" r="5"/><path d="M28 53c2-5 6-5 8-9"/></svg><h3>Camminate nella natura</h3><p>Passeggiate tra boschi e sentieri della Presolana, per respirare, camminare piano e lasciare andare.</p></div>
-  <div class="card" style="background:#9a6a24"><b>5</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="16" r="5"/><circle cx="14" cy="24" r="4.5"/><circle cx="50" cy="24" r="4.5"/><path d="M20 50c1-13 6-22 12-22s11 9 12 22M4 50c0-9 4-15 10-15M60 50c0-9-4-15-10-15"/></svg><h3>Condivisione</h3><p>Ascolto in cerchio e relazioni genuine: un modo nuovo di stare con gli altri e con te.</p></div>
+  <div class="card" style="background:#8a4a3a"><b>4</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M5 53 23 24l10 16 8-11 18 24Z"/><circle cx="48" cy="13" r="5"/><path d="M28 53c2-5 6-5 8-9"/></svg><h3>Escursioni nella natura</h3><p>Quando il gruppo lo sente, si esce: per esempio un pomeriggio al passo della Presolana.</p></div>
+  <div class="card" style="background:#9a6a24"><b>5</b><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="16" r="5"/><circle cx="14" cy="24" r="4.5"/><circle cx="50" cy="24" r="4.5"/><path d="M20 50c1-13 6-22 12-22s11 9 12 22M4 50c0-9 4-15 10-15M60 50c0-9-4-15-10-15"/></svg><h3>Condivisione</h3><p>Si condivide dopo le meditazioni, e escono cose molto personali. Ma anche cucinando, tenendo la casa in ordine, ridendo insieme.</p></div>
  </div>
 </div></section>
 
 <section id="days">
  <div class="st" id="st">
   <div class="sun2" id="sun2"></div>
-    <div class="txt" id="tx"><div class="dt" id="dt"></div><h2 id="dh"></h2><ul id="dl"></ul></div>
+    <div class="txt" id="tx"><h2 id="dh"></h2><ul id="dl"></ul></div>
   <div class="dots"><i></i><i></i><i></i><i></i></div>
  </div>
 </section>
@@ -154,9 +157,7 @@ footer{background:var(--g);color:#fbf4e688;text-align:center;font-size:.8rem;pad
   <li style="--d:1">Trattamento di pensione completa</li>
   <li style="--d:2">Guida di Swami Kalyanmitra</li>
   <li style="--d:3">Tutte le meditazioni di Osho</li>
-  <li style="--d:4">Consapevolezza e sessioni di yoga</li>
-  <li style="--d:5">Camminate nella natura</li>
-  <li style="--d:6">Condivisione e momenti di silenzio</li>
+  <li style="--d:4">Sessioni di yoga</li>
  </ul>
  <p class="pc rv"><span class="pr">350 €</span> a persona</p>
  <h3 class="ni rv">Non incluso</h3>
@@ -263,9 +264,9 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
 $$('.pk button').forEach(b=>b.onclick=()=>b.classList.toggle('on'));
 $$('.q button').forEach(b=>b.onclick=()=>{const q=b.parentNode,o=q.classList.contains('open');$$('.q').forEach(x=>x.classList.remove('open'));if(!o)q.classList.add('open')});
 // days
-const D=[['Sabato','Arrivo',[['11:00','Arrivo e accoglienza'],['15:00','Prima meditazione'],['19:30','Cena e condivisione']],'#143329','#1f4a3f'],['Domenica','Meditazione',[['07:00','Meditazione del mattino'],['10:00','Yoga e consapevolezza'],['16:00','Camminata nella natura']],'#5a2f2a','#b9604a'],['Lunedì','Silenzio',[['07:00','Meditazione del mattino'],['10:00','Giornata di silenzio'],['16:00','Condivisione in cerchio']],'#2d4a3a','#7a8f62'],['Martedì','Ritorno a casa',[['07:00','Meditazione del mattino'],['10:00','Yoga e saluti'],['17:00','Chiusura del ritiro']],'#6b3a2c','#d9a24b']];
+const D=[['Sabato · dalle 11:00','Si arriva',['Arrivo verso le 11:00','Accoglienza a Casa Berni','Si entra nel gruppo, senza fretta'],'#143329','#1f4a3f'],['Il cuore del ritiro','Si medita',['Meditazioni di Osho, dinamiche e passive','Si lavora su emozioni, rabbia e relazioni','Nessun orario fisso: guida Kalyan'],'#5a2f2a','#b9604a'],['Il resto delle giornate','Si fluisce',['Condivisioni dopo le meditazioni','Pasti insieme, cucina, danza, risate','Se capita, un\'escursione al passo della Presolana'],'#2d4a3a','#7a8f62'],['Martedì · verso le 17:00','Si torna a casa',['Chiusura del ritiro verso le 17:00','Si porta a casa ciò che è emerso','Per tornare a casa dentro di sé'],'#6b3a2c','#d9a24b']];
 let cur=-1;
-function setDay(i){if(i===cur)return;cur=i;const tx=$('#tx');tx.classList.add('sw');setTimeout(()=>{$('#dt').textContent=D[i][1];$('#dh').textContent=D[i][0];$('#dl').innerHTML=D[i][2].map(r=>'<li><b>'+r[0]+'</b><span>'+r[1]+'</span></li>').join('');tx.classList.remove('sw')},250);$('#st').style.background=`linear-gradient(${D[i][3]},${D[i][4]})`;$$('.dots i').forEach((d,k)=>d.classList.toggle('on',k===i))}
+function setDay(i){if(i===cur)return;cur=i;const tx=$('#tx');tx.classList.add('sw');setTimeout(()=>{$('#dh').textContent=D[i][1];$('#dl').innerHTML=D[i][2].map(r=>'<li>'+r+'</li>').join('');tx.classList.remove('sw')},250);$('#st').style.background=`linear-gradient(${D[i][3]},${D[i][4]})`;$$('.dots i').forEach((d,k)=>d.classList.toggle('on',k===i))}
 // scroll
 const sd=$('#days'),sun=$('#sun'),m1=$('#m1'),m2=$('#m2'),bar=$('#bar'),stk=$('#sticky'),sun2=$('#sun2');
 let ty=scrollY,cy=ty,tp=0,cp=0,raf=0;
